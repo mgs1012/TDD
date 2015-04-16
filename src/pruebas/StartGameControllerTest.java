@@ -28,11 +28,12 @@ public class StartGameControllerTest {
 			assertEquals(0, sizeFoundation);
 		}
 	}
-//	@Test
-//	public void sizeDeckTest{
-//		assertEquals(0, StartGameController.sizeDeck());
-//	}
-//
+	
+	@Test
+	public void sizeDeckTest(){
+		assertEquals(0, StartGameController.sizeDeck());
+	}
+
 //	@Test
 //	public void sizeTableuTest(){
 //		ArrayList<Integer> sizeTableaus = StartGameController.sizeCoverCardsTableaus();
