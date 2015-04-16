@@ -21,13 +21,13 @@ public class StartGameControllerTest {
 		
 		assertEquals(0,startGameController.sizeWaste());
 	}
-//	
-//	@Test
-//	public void sizeFoundationTest(){
-//		for(int sizeFoundation : StartGameController.sizeFoundation()){
-//			assertEquals(0, sizeFoundation);
-//		}
-//	}
+	
+	@Test
+	public void sizeFoundationTest(){
+		for(int sizeFoundation : startGameController.sizeFoundation()){
+			assertEquals(0, sizeFoundation);
+		}
+	}
 //	@Test
 //	public void sizeDeckTest{
 //		assertEquals(0, StartGameController.sizeDeck());

@@ -15,9 +15,9 @@ public class StartGameController {
 	}
 
 	public ArrayList<Integer> sizeFoundation() {
-		ArrayList<Integer> sizeFoundaation = new ArrayList<Integer>();
+		ArrayList<Integer> sizeFoundation = new ArrayList<Integer>();
 		
-		return null;
+		return sizeFoundation;
 	}
 
 	public static Object sizeDeck() {
