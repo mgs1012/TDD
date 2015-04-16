@@ -1,9 +1,11 @@
 package pruebas;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
+import main.Card;
 import main.StartGameController;
 
 import org.junit.Before;
@@ -34,12 +36,17 @@ public class StartGameControllerTest {
 		assertEquals(0, StartGameController.sizeDeck());
 	}
 
-//	@Test
-//	public void sizeTableuTest(){
-//		ArrayList<Integer> sizeTableaus = StartGameController.sizeCoverCardsTableaus();
-//		for (int i = 0; i < sizeTableaus.size(); i++) {
-//			assertEquals(new Integer(i+1), sizeTableaus.get(i));
-//		}
-//		ArrayList<Stack<Card>> uncoveredCardStackTableau = StartGameController.uncoveredCardStackTableau();
-//	}
+	@Test
+	public void sizeTableuTest(){
+		ArrayList<Integer> sizeTableaus = StartGameController.sizeCoverCardsTableaus();
+		ArrayList<Stack<Card>> uncoveredCardStackTableau = StartGameController.uncoveredCardStackTableau();
+
+		for (int i = 0; i < sizeTableaus.size(); i++) {
+			assertEquals(new Integer(i+1), sizeTableaus.get(i));
+		}
+		for (Stack<Card> uncoveredCardsStack : uncoveredCardStackTableau) {
+			assertEquals(0, uncoveredCardsStack.size());
+			assertTrue(uncoveredCardsStack.peek().uncovered());
+		}
+	}
 }
