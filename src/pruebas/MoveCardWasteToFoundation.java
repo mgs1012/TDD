@@ -2,13 +2,9 @@ package pruebas;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Stack;
-
 import main.Card;
 import main.Figure;
 import main.MoveCardWasteToFoundationController;
-import main.StartGameController;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,12 +14,15 @@ public class MoveCardWasteToFoundation {
 	private int lenghtFoundation;
 	@Before
 	public void before() {
-		moveCardWasteToFoundation = new MoveCardWasteToFoundationController(new Card(1,Figure.DIAMONDS),moveCardWasteToFoundation.getFoundation(0));
+		moveCardWasteToFoundation = new MoveCardWasteToFoundationController
+				(new Card(1,Figure.DIAMONDS),0);
 		lenghtFoundation = moveCardWasteToFoundation.getFoundation(0).getSize();
+		
+		System.out.println("longitud" +lenghtFoundation);
 	}
 
 	@Test
-	public void moverCardWasteToFoundationTest(){
+	public void moveCardWasteToFoundationTest(){
 		assertEquals(lenghtFoundation,moveCardWasteToFoundation.getFoundation(0).getSize());
 	}
 
