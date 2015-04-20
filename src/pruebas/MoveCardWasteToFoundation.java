@@ -14,6 +14,7 @@ public class MoveCardWasteToFoundation {
 	private int lenghtFoundation;
 	@Before
 	public void before() {
+		//Obtener la ultima carta del Waste
 		moveCardWasteToFoundation = new MoveCardWasteToFoundationController
 				(new Card(1,Figure.DIAMONDS),0);
 		lenghtFoundation = moveCardWasteToFoundation.getFoundation(0).getSize();

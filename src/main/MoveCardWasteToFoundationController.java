@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class MoveCardWasteToFoundationController {
 	private Card card;
-	private Foundation foundation;
+	private int foundationPosition;
 	
 	
-	public MoveCardWasteToFoundationController(Card card, Foundation foundation) {
+	public MoveCardWasteToFoundationController(Card card, int foundationPosition) {
 		this.card = card;
-		this.foundation = foundation;
+		this.foundationPosition = foundationPosition;
 	}
 
 	public Foundation getFoundation(int i) {
@@ -29,12 +29,12 @@ public class MoveCardWasteToFoundationController {
 		this.card = card;
 	}
 
-	public Foundation getFoundation() {
-		return foundation;
+	public int getFoundationPosition() {
+		return foundationPosition;
 	}
 
-	public void setFoundation(Foundation foundation) {
-		this.foundation = foundation;
+	public void setFoundationPosition(int foundationPosition) {
+		this.foundationPosition = foundationPosition;
 	}
 
 }
