@@ -20,7 +20,6 @@ public class StartGameControllerTest {
 	
 	@Test
 	public void sizeWasteTest(){
-		
 		assertEquals(0,startGameController.sizeWaste());
 	}
 	
@@ -33,7 +32,7 @@ public class StartGameControllerTest {
 	
 	@Test
 	public void sizeDeckTest(){
-		assertEquals(0, StartGameController.sizeDeck());
+		assertEquals(45, startGameController.sizeDeck());
 	}
 
 	@Test

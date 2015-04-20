@@ -3,9 +3,19 @@ package main;
 public class Card {
 	private int value;
 	private Figure figure;
+	private boolean isCovered;
 	public Card (int value, Figure figure){
 		this.value = value;
 		this.figure = figure;
+		this.isCovered = false;
+	}
+
+	public boolean isCovered() {
+		return isCovered;
+	}
+
+	public void setCovered(boolean isCovered) {
+		this.isCovered = isCovered;
 	}
 
 	public boolean equals(Card card){
@@ -31,6 +41,9 @@ public class Card {
 	public boolean  uncovered() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+	public String toString() {
+		return "Carta: " + value + " " + figure.toString();
 	}
 
 }

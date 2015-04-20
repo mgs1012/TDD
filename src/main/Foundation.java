@@ -1,6 +1,19 @@
 package main;
 
+import java.util.ArrayList;
+
 public class Foundation {
+	private Figure figure;
+	
+	private ArrayList<Card> foundationCards;
+
+	public Figure getFigure() {
+		return figure;
+	}
+
+	public void setFigure(Figure figure) {
+		this.figure = figure;
+	}
 
 	public boolean isValidCard(Card card) {
 		return true;
@@ -17,9 +30,8 @@ public class Foundation {
 		return false;
 	}
 
-	public int getSize() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getSizeFundation() {
+		return foundationCards.size();
 	}
 
 }
