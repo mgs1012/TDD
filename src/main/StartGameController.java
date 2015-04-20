@@ -75,8 +75,11 @@ public class StartGameController {
 		return deck.size();
 	}
 
-	public static ArrayList<Stack<Card>> uncoveredCardStackTableau() {
+	public ArrayList<Stack<Card>> uncoveredCardStackTableau() {
 		ArrayList<Stack<Card>> uncoveredCardStackTableau = new ArrayList<Stack<Card>>();
+		for (int i = 0; i < tableauList.size(); i++) {
+			uncoveredCardStackTableau.add(tableauList.get(i).unCoverCards());
+		}
 		return uncoveredCardStackTableau;
 	}
 

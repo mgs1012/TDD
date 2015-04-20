@@ -38,14 +38,14 @@ public class StartGameControllerTest {
 	@Test
 	public void sizeTableuTest(){
 		ArrayList<Integer> sizeTableaus = startGameController.sizeCoverCardsTableaus();
-		ArrayList<Stack<Card>> uncoveredCardStackTableau = StartGameController.uncoveredCardStackTableau();
+		ArrayList<Stack<Card>> uncoveredCardStackTableau = startGameController.uncoveredCardStackTableau();
 
 		for (int i = 0; i < sizeTableaus.size(); i++) {
 			assertEquals(new Integer(i), sizeTableaus.get(i));
 		}
 		for (Stack<Card> uncoveredCardsStack : uncoveredCardStackTableau) {
-			assertEquals(0, uncoveredCardsStack.size());
-			assertTrue(uncoveredCardsStack.peek().uncovered());
+			assertEquals(1, uncoveredCardsStack.size());
+			assertTrue(!uncoveredCardsStack.peek().isCovered());
 		}
 	}
 }
