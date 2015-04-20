@@ -13,6 +13,16 @@ public class TableauPile {
 	public void setTableuCards(ArrayList<Card> tableauCards) {
 		this.tableauCards = tableauCards;
 	}
+	public ArrayList<Card> coverCards(){
+		ArrayList<Card> coverCardsList = new ArrayList<Card>();
+		for (int i = 0; i < tableauCards.size(); i++) {
+			if (tableauCards.get(i).isCovered()) {
+				coverCardsList.add(tableauCards.get(i));
+			}
+			
+		}
+		return coverCardsList;
+	}
 
 
 }

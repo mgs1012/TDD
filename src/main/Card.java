@@ -7,7 +7,7 @@ public class Card {
 	public Card (int value, Figure figure){
 		this.value = value;
 		this.figure = figure;
-		this.isCovered = false;
+		this.isCovered = true;
 	}
 
 	public boolean isCovered() {

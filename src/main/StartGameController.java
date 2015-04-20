@@ -8,6 +8,7 @@ public class StartGameController {
 	private ArrayList<Card> waste;
 	private ArrayList<Foundation> foundationList;
 	private ArrayList<Card> deck;
+	private ArrayList<TableauPile> tableauList ;
 	public StartGameController() {
 		waste = new ArrayList<Card>();
 		foundationList = new ArrayList<Foundation>();
@@ -28,30 +29,39 @@ public class StartGameController {
 		}
 
 	}
-	private ArrayList<TableauPile> initTableau() {
-		ArrayList<TableauPile> tableauListAux = new ArrayList<TableauPile>(7);
+	private void initTableau() {
+		tableauList = new ArrayList<TableauPile>(7);
 		for (int i = 0; i < 7; i++) {
-			tableauListAux.add(new TableauPile());
+			tableauList.add(new TableauPile());
 		}
 		for (int i = 0; i < 7; i++) {
-			Random r =  new Random();
-			int indice = r.nextInt(deck.size());
-			Card card = deck.get(indice);
-			card.setCovered(true);
-			tableauListAux.get(i).getTableuCards().add(card);
-			deck.remove(indice);
+			while(tableauList.get(i).getTableuCards().size()<i+1){
+				Random r =  new Random();
+				int indice = r.nextInt(deck.size());
+				Card card = deck.get(indice);
+				if(tableauList.get(i).getTableuCards().size()==0){
+					card.setCovered(false);
+				}
+				tableauList.get(i).getTableuCards().add(card);
+				deck.remove(indice);
+			}
 		}
-		System.out.println("tableu size"+tableauListAux.get(1).getTableuCards().get(0).toString());
+		for (int i = 0; i < tableauList.size(); i++) {
+			System.out.println("tableu size"+tableauList.get(i).getTableuCards().size());
+		}
+		
 		System.out.println("deck size: "+deck.size());
-		return tableauListAux;
 	}
 
 	public int sizeWaste() {
 		return waste.size();
 	}
 
-	public static ArrayList<Integer> sizeCoverCardsTableaus() {
+	public  ArrayList<Integer> sizeCoverCardsTableaus() {
 		ArrayList<Integer> sizeCoverCardsTableaus = new ArrayList<Integer>();
+		for (int i = 0; i < tableauList.size(); i++) {
+			sizeCoverCardsTableaus.add(tableauList.get(i).coverCards().size());
+		}
 		return sizeCoverCardsTableaus;
 	}
 

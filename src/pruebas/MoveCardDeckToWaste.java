@@ -1,6 +1,6 @@
 package pruebas;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -16,10 +16,10 @@ import org.junit.Test;
 public class MoveCardDeckToWaste {
 	private MoveCardDeckToWasteController moveCardDeckToWasteController;
 	private ArrayList<Card> wasteCards;
+	private ArrayList<Card> deckCards;
 	@Before
 	public void before() {
-		ArrayList<Card> deckCards = new ArrayList<Card>();
-		
+		deckCards = new ArrayList<Card>();
 		for (int i = 0; i < 5; i++) {
 			deckCards.add(new Card(i, Figure.DIAMONDS));
 		}
@@ -29,9 +29,16 @@ public class MoveCardDeckToWaste {
 	
 	@Test
 	public void isNotEmptyWaste(){
-		System.out.println(wasteCards.size());
 		assertTrue(!wasteCards.isEmpty());
 	}
+	
+	@Test
+	public void sizeWaste(){
+		for (int i = 0; i < deckCards.size(); i=i+3) {
+			assertEquals(3,moveCardDeckToWasteController.getWaste().size());
+		}
+	}
+	
 	
 
 }
