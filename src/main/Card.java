@@ -2,14 +2,14 @@ package main;
 
 public class Card {
 	private int value;
-	private String colour;
-	public Card (int value, String colour){
+	private Figure figure;
+	public Card (int value, Figure figure){
 		this.value = value;
-		this.colour = colour;
+		this.figure = figure;
 	}
 
 	public boolean equals(Card card){
-		return card.getColour() == getColour() && card.getValue() == getValue();
+		return card.getFigure() == getFigure() && card.getValue() == getValue();
 	}
 	public int getValue() {
 		return value;
@@ -19,12 +19,13 @@ public class Card {
 		this.value = value;
 	}
 
-	public String getColour() {
-		return colour;
+
+	public Figure getFigure() {
+		return figure;
 	}
 
-	public void setColour(String colour) {
-		this.colour = colour;
+	public void setFigure(Figure figure) {
+		this.figure = figure;
 	}
 
 	public boolean  uncovered() {

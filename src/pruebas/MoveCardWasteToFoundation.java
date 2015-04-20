@@ -6,30 +6,38 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 import main.Card;
+import main.Figure;
+import main.MoveCardWasteToFoundationController;
 import main.StartGameController;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class MoveCardWasteToFoundation {
-	private StartGameController startGameController;
+	private MoveCardWasteToFoundationController moveCardWasteToFoundation;
+	private int lenghtFoundation;
 	@Before
 	public void before() {
-		startGameController = new StartGameController();
+		moveCardWasteToFoundation = new MoveCardWasteToFoundationController(new Card(1,Figure.DIAMONDS),moveCardWasteToFoundation.getFoundation(0));
+		lenghtFoundation = moveCardWasteToFoundation.getFoundation(0).getSize();
 	}
-	
+
+	@Test
+	public void moverCardWasteToFoundationTest(){
+		assertEquals(lenghtFoundation,moveCardWasteToFoundation.getFoundation(0).getSize());
+	}
+
 	@Test
 	public void isValidCardInFoundation(){
-		assertTrue(startGameController.getFoundation(0).isValidCard(new Card(1,"rojo")));
-		assertEquals(0,startGameController.sizeWaste());
+		assertTrue(moveCardWasteToFoundation.getFoundation(0).isValidCard(new Card(1,Figure.DIAMONDS)));
 	}
-	
-	@Test
-	public void isNotCompletedFoundation(){
-		assertFalse(startGameController.getFoundation(0).isCompleted());
-	}
-	
-	
 
-	
+	@Test
+	public void isNotEmptyFoundation(){
+		assertFalse(moveCardWasteToFoundation.getFoundation(0).isCompleted());
+	}
+
+
+
+
 }

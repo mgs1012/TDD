@@ -14,7 +14,11 @@ public class MoveCardTableauToFoundation {
 	public void before() {
 		startGameController = new StartGameController();
 	}
-	
+	@Test
+	public void moveCardTableauToFoundationTest(){
+//		startGameController.sizeFoundation()
+		assertTrue(startGameController.getFoundation(0).isValidCard(new Card(1,"rojo")));
+	}
 	@Test
 	public void isNotValidCardInFoundation(){
 		assertTrue(startGameController.getFoundation(0).isValidCard(new Card(1,"rojo")));

@@ -31,14 +31,7 @@ public class StartGameController {
 		return uncoveredCardStackTableau;
 	}
 
-	public Foundation getFoundation(int i) {
-		ArrayList<Foundation> foundationList =new ArrayList<Foundation>(4);
-		for (int j = 0; j < 4; j++) {
-			foundationList.add(new Foundation());
-		}
-		return foundationList.get(i);
-		
-	}
+
 
 
 }
