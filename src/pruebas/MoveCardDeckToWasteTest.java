@@ -13,9 +13,11 @@ import entities.Card;
 import entities.Figure;
 
 public class MoveCardDeckToWasteTest {
+	
 	private MoveCardDeckToWasteController moveCardDeckToWasteController;
 	private Stack<Card> wasteCards;
 	private Stack<Card> deckCards;
+	
 	@Before
 	public void before() {
 		deckCards = new Stack<Card>();

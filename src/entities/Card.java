@@ -4,6 +4,7 @@ public class Card {
 	private int value;
 	private Figure figure;
 	private boolean isCovered;
+	
 	public Card (int value, Figure figure){
 		this.value = value;
 		this.figure = figure;

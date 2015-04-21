@@ -17,6 +17,7 @@ public class MoveCardTableauToFoundationTest {
 	private MoveCardTableauToFoundationController moveCardTableauToFoundationController;
 	private Foundation foundation;
 	private Stack<Card> tableu;
+	
 	@Before
 	public void before() {
 		foundation = new Foundation();

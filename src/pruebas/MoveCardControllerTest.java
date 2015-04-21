@@ -1,6 +1,9 @@
 package pruebas;
 
+import static org.junit.Assert.*;
+
 import org.junit.Before;
+import org.junit.Test;
 
 import controllers.MoveCardController;
 import controllers.StartGameController;
@@ -19,4 +22,9 @@ public class MoveCardControllerTest {
 		startGameController = new StartGameController();	
 	}
 	
+	@Test
+	public void moveCard(){
+		assertFalse(moveCardController.getWasteStack().contains(moveCardController.getDeckStack().elementAt(0)));
+	}
+
 }
