@@ -1,4 +1,4 @@
-package main;
+package controllers;
 
 import entities.Card;
 import entities.Foundation;

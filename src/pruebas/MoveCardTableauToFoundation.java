@@ -5,12 +5,11 @@ import static org.junit.Assert.*;
 
 import java.util.Stack;
 
-import main.MoveCardTableauToFoundationController;
-import main.StartGameController;
-
 import org.junit.Before;
 import org.junit.Test;
 
+import controllers.MoveCardTableauToFoundationController;
+import controllers.StartGameController;
 import entities.Card;
 import entities.Figure;
 import entities.Foundation;
