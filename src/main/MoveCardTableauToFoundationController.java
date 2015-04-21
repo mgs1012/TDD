@@ -5,17 +5,30 @@ import java.util.Stack;
 public class MoveCardTableauToFoundationController {
 	
 	private Foundation foundation;
+	private Stack<Card> tableau;
 	public MoveCardTableauToFoundationController(Stack<Card> tableau  ,Foundation foundation) {
-		// TODO Auto-generated constructor stub
+		this.foundation = foundation;
+		this.tableau = tableau;
+		if(tableau.size()>0){
+			Card card = tableau.lastElement();
+			System.out.println(card.toString() + " ultima carta foundation"+ foundation.getLastCard().toString());
+			if(foundation.isValidCard(card)){
+				foundation.addCard(card);
+				System.out.println("antes de eliminar"+tableau.size());
+				tableau.removeElementAt(tableau.size());
+				System.out.println("despues de eliminar: " + tableau.size());
+			}
+		}
 	}
 
 	public MoveCardTableauToFoundationController() {
-		// TODO Auto-generated constructor stub
+		this.foundation = new Foundation();
+		this.tableau = new Stack<Card>();
 	}
 
 	public int getTableauSize() {
 		// TODO Auto-generated method stub
-		return 3;
+		return tableau.size();
 	}
 
 	public int getFoundationSize() {

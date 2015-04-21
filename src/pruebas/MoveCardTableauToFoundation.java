@@ -21,21 +21,24 @@ public class MoveCardTableauToFoundation {
 	@Before
 	public void before() {
 		foundation = new Foundation();
+		tableu = new Stack<Card>();
 		for (int i = 1; i < 4; i++) {
 			foundation.addCard(new Card(i, Figure.CLUBS));
 		}
-		tableu = new Stack<Card>();
-		for (int i = 3; i < 6; i++) {
+		System.out.println(" foundation test: "+ foundation.getLastCard().toString());
+		for (int i = 3; i < 7; i++) {
 			tableu.add(new Card(i, Figure.DIAMONDS));
 		}
 		Card card = new Card(4, Figure.CLUBS);
 		card.setCovered(false);
 		tableu.add(card);
+		System.out.println(tableu.size());
 		moveCardTableauToFoundationController= new MoveCardTableauToFoundationController(tableu, foundation);
 	}
 	@Test
 	public void moveCardTableauToFoundationTest(){
-		assertEquals(3,moveCardTableauToFoundationController.getTableauSize());
+		System.out.println( "Test Tableau: "+moveCardTableauToFoundationController.getTableauSize());
+		assertEquals(tableu.size()-1,moveCardTableauToFoundationController.getTableauSize());
 		assertEquals(4,moveCardTableauToFoundationController.getFoundationSize());
 	}
 	@Test

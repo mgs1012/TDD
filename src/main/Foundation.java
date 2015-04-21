@@ -19,14 +19,16 @@ public class Foundation {
 	}
 
 	public boolean isValidCard(Card card) {
-		return (card.getValue() ==1 && this.isEmpty()) ||
-				(this.getLastCard().getValue()+1==card.getValue()
-				&& this.getFigure()== card.getFigure()) ;
+		int valor = getLastCard().getValue()+1;
+		System.out.println("condicion: "+ valor + " " + card.getValue() + getLastCard().getFigure() + card.getFigure());
+		return (card.getValue() ==1 && isEmpty()) ||
+				(getLastCard().getValue()+1==card.getValue()
+				&& getLastCard().getFigure()== card.getFigure()) ;
 		
 	}
 
 	public Card getLastCard() {
-		return new Card(1,Figure.DIAMONDS);
+		return foundationCards.lastElement();
 	}
 
 	public boolean isCompleted() {
