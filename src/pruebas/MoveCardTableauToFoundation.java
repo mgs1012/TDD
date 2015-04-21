@@ -37,14 +37,12 @@ public class MoveCardTableauToFoundation {
 	}
 	@Test
 	public void moveCardTableauToFoundationTest(){
-		System.out.println( "Test Tableau: "+moveCardTableauToFoundationController.getTableauSize());
-		assertEquals(tableu.size()-1,moveCardTableauToFoundationController.getTableauSize());
+		System.out.println( "Test Tableau: "+moveCardTableauToFoundationController.getTableauSize() + "  " + tableu.size());
+		assertEquals(tableu.size(),moveCardTableauToFoundationController.getTableauSize());
 		assertEquals(4,moveCardTableauToFoundationController.getFoundationSize());
 	}
 	@Test
 	public void isEmpytyFoundation(){
-		foundation = new Foundation();
-		moveCardTableauToFoundationController= new MoveCardTableauToFoundationController(tableu, foundation);
 		assertFalse(!moveCardTableauToFoundationController.getFoundation().isEmpty());
 	}
 	

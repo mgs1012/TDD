@@ -11,11 +11,10 @@ public class MoveCardTableauToFoundationController {
 		this.tableau = tableau;
 		if(tableau.size()>0){
 			Card card = tableau.lastElement();
-			System.out.println(card.toString() + " ultima carta foundation"+ foundation.getLastCard().toString());
 			if(foundation.isValidCard(card)){
 				foundation.addCard(card);
 				System.out.println("antes de eliminar"+tableau.size());
-				tableau.removeElementAt(tableau.size());
+				tableau.removeElementAt(tableau.size()-1);
 				System.out.println("despues de eliminar: " + tableau.size());
 			}
 		}
@@ -33,7 +32,7 @@ public class MoveCardTableauToFoundationController {
 
 	public int getFoundationSize() {
 		// TODO Auto-generated method stub
-		return 4;
+		return foundation.getSizeFundation();
 	}
 
 	public Foundation getFoundation() {
@@ -43,7 +42,7 @@ public class MoveCardTableauToFoundationController {
 
 	public boolean isValidMove(Stack<Card> tableu, Foundation foundation2) {
 		// TODO Auto-generated method stub
-		return false;
+		return foundation2.isValidCard(tableu.lastElement());
 	}
 
 }

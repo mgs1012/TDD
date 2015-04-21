@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Foundation {
 	private Figure figure;
-	
+
 	private Stack<Card> foundationCards;
 	public Foundation(){
 		foundationCards = new Stack<Card>();
@@ -19,12 +19,10 @@ public class Foundation {
 	}
 
 	public boolean isValidCard(Card card) {
-		int valor = getLastCard().getValue()+1;
-		System.out.println("condicion: "+ valor + " " + card.getValue() + getLastCard().getFigure() + card.getFigure());
 		return (card.getValue() ==1 && isEmpty()) ||
 				(getLastCard().getValue()+1==card.getValue()
 				&& getLastCard().getFigure()== card.getFigure()) ;
-		
+
 	}
 
 	public Card getLastCard() {
