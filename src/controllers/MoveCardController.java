@@ -24,4 +24,7 @@ public class MoveCardController {
 		return wasteStack;
 	}
 	
+	public void moveCard(Stack<Card> stackFrom, Stack<Card> stackTo){
+		stackTo.push(stackFrom.pop());
+	}
 }
