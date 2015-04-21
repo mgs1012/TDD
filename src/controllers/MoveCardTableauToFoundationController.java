@@ -29,12 +29,10 @@ public class MoveCardTableauToFoundationController {
 	}
 
 	public int getTableauSize() {
-		// TODO Auto-generated method stub
 		return tableau.size();
 	}
 
 	public int getFoundationSize() {
-		// TODO Auto-generated method stub
 		return foundation.getSizeFundation();
 	}
 
@@ -44,7 +42,6 @@ public class MoveCardTableauToFoundationController {
 	}
 
 	public boolean isValidMove(Stack<Card> tableu, Foundation foundation2) {
-		// TODO Auto-generated method stub
 		return foundation2.isValidCard(tableu.lastElement());
 	}
 

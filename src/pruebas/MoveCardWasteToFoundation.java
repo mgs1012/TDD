@@ -12,20 +12,17 @@ import entities.Foundation;
 
 public class MoveCardWasteToFoundation {
 	private MoveCardWasteToFoundationController moveCardWasteToFoundation;
-	private int lenghtFoundation;
 	private Foundation foundation;
 	@Before
 	public void before() {
 		foundation =new Foundation();
-		lenghtFoundation = foundation.getSizeFundation() + 1;
-		System.out.println("longitud" +lenghtFoundation);
 		moveCardWasteToFoundation = new MoveCardWasteToFoundationController
 				(new Card(1,Figure.DIAMONDS),foundation);
 	}
 
 	@Test
 	public void moveCardWasteToFoundationTest(){
-		assertEquals(lenghtFoundation,moveCardWasteToFoundation.getFoundation().getSizeFundation());
+		assertEquals(foundation.getSizeFundation(),moveCardWasteToFoundation.getFoundation().getSizeFundation());
 	}
 
 	@Test

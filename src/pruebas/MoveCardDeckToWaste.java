@@ -2,15 +2,13 @@ package pruebas;
 
 import static org.junit.Assert.*;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
 import java.util.Stack;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import controllers.MoveCardDeckToWasteController;
-import controllers.StartGameController;
 import entities.Card;
 import entities.Figure;
 

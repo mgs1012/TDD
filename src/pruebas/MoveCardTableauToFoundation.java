@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controllers.MoveCardTableauToFoundationController;
-import controllers.StartGameController;
 import entities.Card;
 import entities.Figure;
 import entities.Foundation;

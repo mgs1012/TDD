@@ -4,7 +4,7 @@ import java.util.Stack;
 
 import entities.Card;
 
-public class MoveCardDeckToWasteController {
+public class MoveCardDeckToWasteController{
 
 	private Stack<Card> wasteCards;
 	private Stack<Card> deckCards;
