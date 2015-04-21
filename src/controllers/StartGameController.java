@@ -10,10 +10,13 @@ import entities.Foundation;
 import entities.TableauPile;
 
 public class StartGameController {
+	
 	private ArrayList<Card> waste;
 	private ArrayList<Foundation> foundationList;
 	private ArrayList<Card> deck;
 	private ArrayList<TableauPile> tableauList ;
+	private final int NUM_CARTAS_DECK = 24;
+	
 	public StartGameController() {
 		waste = new ArrayList<Card>();
 		foundationList = new ArrayList<Foundation>();
@@ -89,6 +92,24 @@ public class StartGameController {
 	}
 
 
-
+	public Stack<Card> getDeck(){
+		Stack<Card> deck = new Stack<Card>();
+		for(int i = 0; i<NUM_CARTAS_DECK ; i++){
+			Card card;
+			do{
+				Random r = new Random();
+				card = new Card(r.nextInt(3), Figure.DIAMONDS);
+				
+			}while(deck.contains(card));
+			{
+				deck.push(card);
+			}
+		}
+		return deck;
+	}
+	
+	public Stack<Card> getWaste(){
+		return new Stack<Card>();
+	}
 
 }
