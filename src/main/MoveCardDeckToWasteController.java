@@ -1,27 +1,30 @@
 package main;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class MoveCardDeckToWasteController {
 
-	public ArrayList<Card> getDeckCards(){
-		ArrayList<Card> deckCards = new ArrayList<Card>();
-		for (int i = 0; i < 2; i++) {
-			deckCards.add(new Card(i, Figure.DIAMONDS));
+	private Stack<Card> wasteCards;
+	private Stack<Card> deckCards;
+	
+	public MoveCardDeckToWasteController(Stack<Card> deckCards) {
+		this.deckCards = deckCards;
+		this.wasteCards = new Stack<Card>();
+		for (int i = 0; i < 3; i++) {
+			if(!deckCards.isEmpty()){
+				Card card = deckCards.pop();
+				card.setCovered(false);
+				wasteCards.add(card);
+			}
 		}
+	}
+
+	public Stack<Card> getWaste() {
+		return wasteCards;
+	}
+	public Stack<Card> getDeckCards(){
 		return deckCards;
 	}
 
-	public MoveCardDeckToWasteController(ArrayList<Card> deckCards) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public ArrayList<Card> getWaste() {
-		ArrayList<Card> wasteCards = new ArrayList<Card>();
-		for (int i = 0; i < 3; i++) {
-			wasteCards.add(new Card(i, Figure.DIAMONDS));
-		}
-		return wasteCards;
-	}
 
 }

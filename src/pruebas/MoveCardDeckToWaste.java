@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Stack;
 
 import main.Card;
 import main.Figure;
@@ -15,11 +16,11 @@ import org.junit.Test;
 
 public class MoveCardDeckToWaste {
 	private MoveCardDeckToWasteController moveCardDeckToWasteController;
-	private ArrayList<Card> wasteCards;
-	private ArrayList<Card> deckCards;
+	private Stack<Card> wasteCards;
+	private Stack<Card> deckCards;
 	@Before
 	public void before() {
-		deckCards = new ArrayList<Card>();
+		deckCards = new Stack<Card>();
 		for (int i = 0; i < 5; i++) {
 			deckCards.add(new Card(i, Figure.DIAMONDS));
 		}
