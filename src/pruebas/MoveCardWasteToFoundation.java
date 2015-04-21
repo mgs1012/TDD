@@ -22,9 +22,6 @@ public class MoveCardWasteToFoundation {
 		System.out.println("longitud" +lenghtFoundation);
 		moveCardWasteToFoundation = new MoveCardWasteToFoundationController
 				(new Card(1,Figure.DIAMONDS),foundation);
-		
-		
-		
 	}
 
 	@Test

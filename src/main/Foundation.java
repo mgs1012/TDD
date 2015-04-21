@@ -35,7 +35,7 @@ public class Foundation {
 	}
 
 	public int getSizeFundation() {
-		return 1;
+		return foundationCards.size();
 	}
 	public void addCard(Card card){
 		foundationCards.add(card);
