@@ -26,19 +26,23 @@ public class MoveCardDeckToWaste {
 		moveCardDeckToWasteController = new MoveCardDeckToWasteController(deckCards);
 		wasteCards = moveCardDeckToWasteController.getWaste();
 	}
-	
+
 	@Test
 	public void isNotEmptyWaste(){
 		assertTrue(!wasteCards.isEmpty());
 	}
-	
+
 	@Test
 	public void sizeWaste(){
-		for (int i = 0; i < deckCards.size(); i=i+3) {
-			assertEquals(3,moveCardDeckToWasteController.getWaste().size());
-		}
+		assertEquals(3,moveCardDeckToWasteController.getWaste().size());
+
 	}
-	
-	
+	@Test
+	public void sizeDeck(){
+		assertEquals(2,moveCardDeckToWasteController.getDeckCards().size());
+
+	}
+
+
 
 }
