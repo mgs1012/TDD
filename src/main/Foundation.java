@@ -19,7 +19,9 @@ public class Foundation {
 	}
 
 	public boolean isValidCard(Card card) {
-		return true;
+		return (card.getValue() ==1 && this.isEmpty()) ||
+				(this.getLastCard().getValue()+1==card.getValue()
+				&& this.getFigure()== card.getFigure()) ;
 		
 	}
 
