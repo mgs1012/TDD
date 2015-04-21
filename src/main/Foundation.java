@@ -1,11 +1,11 @@
 package main;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class Foundation {
 	private Figure figure;
 	
-	private ArrayList<Card> foundationCards;
+	private Stack<Card> foundationCards;
 
 	public Figure getFigure() {
 		return figure;
@@ -21,13 +21,11 @@ public class Foundation {
 	}
 
 	public Card getLastCard() {
-		// TODO Auto-generated method stub
 		return new Card(1,Figure.DIAMONDS);
 	}
 
 	public boolean isCompleted() {
-		// TODO Auto-generated method stub
-		return false;
+		return foundationCards.isEmpty();
 	}
 
 	public int getSizeFundation() {
