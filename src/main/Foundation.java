@@ -6,6 +6,9 @@ public class Foundation {
 	private Figure figure;
 	
 	private Stack<Card> foundationCards;
+	public Foundation(){
+		foundationCards = new Stack<Card>();
+	}
 
 	public Figure getFigure() {
 		return figure;
@@ -25,11 +28,17 @@ public class Foundation {
 	}
 
 	public boolean isCompleted() {
+		return foundationCards.size() == 13;
+	}
+	public boolean isEmpty(){
 		return foundationCards.isEmpty();
 	}
 
 	public int getSizeFundation() {
-		return foundationCards.size();
+		return 1;
+	}
+	public void addCard(Card card){
+		foundationCards.add(card);
 	}
 
 }

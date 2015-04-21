@@ -9,6 +9,8 @@ public class MoveCardWasteToFoundationController {
 	public MoveCardWasteToFoundationController(Card card, Foundation foundation) {
 		this.card = card;
 		this.foundation = foundation;
+		foundation.addCard(card);
+
 	}
 
 	public Foundation getFoundation() {

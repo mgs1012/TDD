@@ -18,16 +18,19 @@ public class MoveCardWasteToFoundation {
 	public void before() {
 		//Obtener la ultima carta del Waste
 		foundation =new Foundation();
+		lenghtFoundation = 0;
+		System.out.println("longitud" +lenghtFoundation);
 		moveCardWasteToFoundation = new MoveCardWasteToFoundationController
 				(new Card(1,Figure.DIAMONDS),foundation);
-		lenghtFoundation = moveCardWasteToFoundation.getFoundation().getSizeFundation();
 		
-		System.out.println("longitud" +lenghtFoundation);
+		
+		
 	}
 
 	@Test
 	public void moveCardWasteToFoundationTest(){
-		assertEquals(lenghtFoundation,moveCardWasteToFoundation.getFoundation().getSizeFundation());
+		System.out.println();
+		assertEquals(lenghtFoundation+1,moveCardWasteToFoundation.getFoundation().getSizeFundation());
 	}
 
 	@Test
