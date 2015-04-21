@@ -10,7 +10,7 @@ import entities.Card;
 import entities.Figure;
 import entities.Foundation;
 
-public class MoveCardWasteToFoundation {
+public class MoveCardWasteToFoundationTest {
 	private MoveCardWasteToFoundationController moveCardWasteToFoundation;
 	private Foundation foundation;
 	@Before

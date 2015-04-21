@@ -12,7 +12,7 @@ import controllers.MoveCardDeckToWasteController;
 import entities.Card;
 import entities.Figure;
 
-public class MoveCardDeckToWaste {
+public class MoveCardDeckToWasteTest {
 	private MoveCardDeckToWasteController moveCardDeckToWasteController;
 	private Stack<Card> wasteCards;
 	private Stack<Card> deckCards;

@@ -13,7 +13,7 @@ import entities.Card;
 import entities.Figure;
 import entities.Foundation;
 
-public class MoveCardTableauToFoundation {
+public class MoveCardTableauToFoundationTest {
 	private MoveCardTableauToFoundationController moveCardTableauToFoundationController;
 	private Foundation foundation;
 	private Stack<Card> tableu;
