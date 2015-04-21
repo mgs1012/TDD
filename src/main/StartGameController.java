@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Stack;
 
+import entities.Card;
+import entities.Figure;
+import entities.Foundation;
+import entities.TableauPile;
+
 public class StartGameController {
 	private ArrayList<Card> waste;
 	private ArrayList<Foundation> foundationList;

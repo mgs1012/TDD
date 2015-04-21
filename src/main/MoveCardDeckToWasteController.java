@@ -2,6 +2,8 @@ package main;
 
 import java.util.Stack;
 
+import entities.Card;
+
 public class MoveCardDeckToWasteController {
 
 	private Stack<Card> wasteCards;

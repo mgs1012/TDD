@@ -6,13 +6,14 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import main.Card;
-import main.Figure;
 import main.MoveCardDeckToWasteController;
 import main.StartGameController;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import entities.Card;
+import entities.Figure;
 
 public class MoveCardDeckToWaste {
 	private MoveCardDeckToWasteController moveCardDeckToWasteController;

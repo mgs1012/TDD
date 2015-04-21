@@ -1,5 +1,8 @@
 package main;
 
+import entities.Card;
+import entities.Foundation;
+
 
 public class MoveCardWasteToFoundationController {
 	private Card card;

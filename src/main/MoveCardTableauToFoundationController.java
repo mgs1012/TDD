@@ -2,6 +2,9 @@ package main;
 
 import java.util.Stack;
 
+import entities.Card;
+import entities.Foundation;
+
 public class MoveCardTableauToFoundationController {
 	
 	private Foundation foundation;

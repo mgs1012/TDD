@@ -5,11 +5,12 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.Stack;
 
-import main.Card;
 import main.StartGameController;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import entities.Card;
 
 public class StartGameControllerTest {
 	private StartGameController startGameController;

@@ -5,14 +5,15 @@ import static org.junit.Assert.*;
 
 import java.util.Stack;
 
-import main.Card;
-import main.Figure;
-import main.Foundation;
 import main.MoveCardTableauToFoundationController;
 import main.StartGameController;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import entities.Card;
+import entities.Figure;
+import entities.Foundation;
 
 public class MoveCardTableauToFoundation {
 	private MoveCardTableauToFoundationController moveCardTableauToFoundationController;
@@ -37,7 +38,6 @@ public class MoveCardTableauToFoundation {
 	}
 	@Test
 	public void moveCardTableauToFoundationTest(){
-		System.out.println( "Test Tableau: "+moveCardTableauToFoundationController.getTableauSize() + "  " + tableu.size());
 		assertEquals(tableu.size(),moveCardTableauToFoundationController.getTableauSize());
 		assertEquals(4,moveCardTableauToFoundationController.getFoundationSize());
 	}
@@ -45,7 +45,7 @@ public class MoveCardTableauToFoundation {
 	public void isEmpytyFoundation(){
 		assertFalse(!moveCardTableauToFoundationController.getFoundation().isEmpty());
 	}
-	
+	@Test
 	public void isWrongMove(){
 		moveCardTableauToFoundationController= new MoveCardTableauToFoundationController();
 		assertFalse(moveCardTableauToFoundationController.isValidMove(tableu, foundation));

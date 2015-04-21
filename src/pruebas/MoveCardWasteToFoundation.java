@@ -1,14 +1,14 @@
 package pruebas;
 
 import static org.junit.Assert.*;
-
-import main.Card;
-import main.Figure;
-import main.Foundation;
 import main.MoveCardWasteToFoundationController;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import entities.Card;
+import entities.Figure;
+import entities.Foundation;
 
 public class MoveCardWasteToFoundation {
 	private MoveCardWasteToFoundationController moveCardWasteToFoundation;
