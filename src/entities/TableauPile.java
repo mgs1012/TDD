@@ -5,6 +5,7 @@ import java.util.Stack;
 
 public class TableauPile {
 	private ArrayList<Card> tableauCards;
+	
 	public TableauPile(){
 		tableauCards = new ArrayList<Card>();
 	}
