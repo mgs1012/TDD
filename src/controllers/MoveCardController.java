@@ -11,13 +11,12 @@ public class MoveCardController {
 	private Stack<Card> deckStack;
 	private Stack<Card> wasteStack;
 	private Foundation foundation;
+	private Stack<Card> tableau;
 	private TableauPile tableauPile;
 		
-	public MoveCardController(Stack<Card> deckStack,Stack<Card> wasteStack ){
-		
+	public MoveCardController(Stack<Card> deckStack,Stack<Card> wasteStack ){		
 		this.deckStack = deckStack;
-		this.wasteStack = wasteStack;
-		
+		this.wasteStack = wasteStack;		
 	}
 
 	public Stack<Card> getDeckStack() {
@@ -43,6 +42,18 @@ public class MoveCardController {
 				Card card = deckCards.pop();
 				card.setCovered(false);
 				wasteStack.add(card);
+			}
+		}
+	}
+	
+	public void moveCardTableauToFoundation(Stack<Card> tableau  ,Foundation foundation){
+		this.foundation = foundation;
+		this.tableau = tableau;
+		if(tableau.size()>0){
+			Card card = tableau.lastElement();
+			if(foundation.isValidCard(card)){
+				foundation.addCard(card);
+				tableau.removeElementAt(tableau.size()-1);
 			}
 		}
 	}
