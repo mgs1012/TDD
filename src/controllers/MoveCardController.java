@@ -12,7 +12,7 @@ public class MoveCardController {
 	private Stack<Card> wasteStack;
 	private Foundation foundation;
 	private Stack<Card> tableau;
-	private TableauPile tableauPile;
+	private Card card;
 		
 	public MoveCardController(Stack<Card> deckStack,Stack<Card> wasteStack ){		
 		this.deckStack = deckStack;
@@ -27,11 +27,32 @@ public class MoveCardController {
 		return wasteStack;
 	}
 	
-	protected Foundation getFoundation(){
-		return this.foundation;
+	public int getFoundationSize() {
+		return foundation.getSizeFundation();
 	}
-	protected TableauPile getTableauPile() {
-		return this.tableauPile;
+	
+	public int getTableauSize() {
+		return tableau.size();
+	}
+
+	public Foundation getFoundation() {
+		this.foundation = new Foundation();
+		return foundation;
+	}
+
+	public boolean isValidMove(Stack<Card> tableau, Foundation foundation2) {
+		return foundation2.isValidCard(tableau.lastElement());
+	}
+	
+	public Stack<Card> getTableau() {
+		return this.tableau;
+	}
+	
+	public Card getCard(){
+		return this.card;
+	}
+	public void setCard(Card card) {
+		this.card = card;
 	}
 
 	public void moveCardDeckToWasteController(Stack<Card> deckCards) {
@@ -46,7 +67,7 @@ public class MoveCardController {
 		}
 	}
 	
-	public void moveCardTableauToFoundation(Stack<Card> tableau  ,Foundation foundation){
+	public void moveCardTableauToFoundation(Stack<Card> tableau ,Foundation foundation){
 		this.foundation = foundation;
 		this.tableau = tableau;
 		if(tableau.size()>0){
@@ -57,4 +78,21 @@ public class MoveCardController {
 			}
 		}
 	}
+	
+	public void moveCardWasteToFoundation(Card card, Foundation foundation){
+		this.card = card;
+		this.foundation = foundation;
+		if(isValidMove()){
+			if(foundation.isEmpty())
+				foundation.setFigure(card.getFigure());
+			foundation.addCard(card);
+		}
+	}
+		
+		private boolean isValidMove() {
+			return (card.getValue() ==1 && foundation.isEmpty()) ||
+					(foundation.getLastCard().getValue()+1==card.getValue()
+					&& foundation.getFigure()== card.getFigure()) ;
+		}
+
 }

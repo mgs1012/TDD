@@ -50,6 +50,10 @@ public class MoveCardControllerTest {
 		tableau.add(card);
 		moveCardController.moveCardTableauToFoundation(tableau, foundation);
 		
+		this.foundation = new Foundation();
+		this.tableau = new Stack<Card>();
+		
+		
 	}
 
 	@Test
@@ -77,5 +81,20 @@ public class MoveCardControllerTest {
 	public void moveCardTableauToFoundation(){
 		
 	}
+
+	@Test
+	public void moveCardTableauToFoundationTest(){
+		assertEquals(tableau.size(),moveCardController.getTableauSize());
+		assertEquals(4,moveCardController.getFoundationSize());
+	}
+	@Test
+	public void isEmpytyFoundation(){
+		assertFalse(!moveCardController.getFoundation().isEmpty());
+	}
+	@Test
+	public void isWrongMove(){
+		assertFalse(moveCardController.isValidMove(tableau, foundation));
+	}
+
 
 }
