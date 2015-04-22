@@ -9,6 +9,7 @@ public class MoveCardTableauToFoundationController {
 	
 	private Foundation foundation;
 	private Stack<Card> tableau;
+	
 	public MoveCardTableauToFoundationController(Stack<Card> tableau  ,Foundation foundation) {
 		this.foundation = foundation;
 		this.tableau = tableau;
